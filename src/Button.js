@@ -10,9 +10,8 @@ const Button = () => {
   const print = () => {
     console.log('Print Clicked!');
     fetch('receipt.txt').then(response => response.text()).then(htmlReceipt => {
-      //TODO: add the communication to the native app
       console.log(htmlReceipt);
-      //TODO: add the communication to the native app
+      JSBridge.showMessageInNative(valueReceived);
     });
   };
   return (<button style={style} onClick={print}>App Button</button>)
